@@ -7,7 +7,7 @@ import sgMail from '@sendgrid/mail'
 import generateToken from '../utils/generateToken.js'
 import nodemailer from 'nodemailer'
 dotenv.config()
-sgMail.setApiKey(process.env.SEND_GRID_API)
+// sgMail.setApiKey(process.env.SEND_GRID_API)
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body
@@ -122,19 +122,19 @@ const verificationLink = asyncHandler(async (req, res) => {
   //   <a href="${process.env.EMAIL_URL}/verify/${tokengenerate}">${process.env.EMAIL_URL}/verify/${tokengenerate}</a>`,
   // }
 
-  sgMail.send(mailOptions, function (error, info) {
-    if (error) {
-      res.status(400)
-      console.log('error occurred')
-      throw new Error(error)
-    } else {
-      console.log('Email sent: ' + info.response)
-      res.status(201).json({
-        response:
-          'A verification link has been sent to your Email. Verify it at first.',
-      })
-    }
-  })
+  // sgMail.send(mailOptions, function (error, info) {
+  //   if (error) {
+  //     res.status(400)
+  //     console.log('error occurred')
+  //     throw new Error(error)
+  //   } else {
+  //     console.log('Email sent: ' + info.response)
+  //     res.status(201).json({
+  //       response:
+  //         'A verification link has been sent to your Email. Verify it at first.',
+  //     })
+  //   }
+  // })
 })
 const registerUser = asyncHandler(async (req, res) => {
   const { token } = req.body
@@ -194,15 +194,15 @@ const emailSend = asyncHandler(async (req, res) => {
     He/She says:  ${text}`,
   }
 
-  sgMail.send(mailOptions, function (error, info) {
-    if (error) {
-      res.status(400)
-      throw new Error(error)
-    } else {
-      console.log('Email sent: ' + info.response)
-      res.status(201).json({ response: 'Email Successfully Sent' })
-    }
-  })
+  // sgMail.send(mailOptions, function (error, info) {
+  //   if (error) {
+  //     res.status(400)
+  //     throw new Error(error)
+  //   } else {
+  //     console.log('Email sent: ' + info.response)
+  //     res.status(201).json({ response: 'Email Successfully Sent' })
+  //   }
+  // })
 })
 
 //get all users by admin only
