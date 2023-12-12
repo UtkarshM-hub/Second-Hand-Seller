@@ -16,7 +16,7 @@
   "author": "Upendra Dhamala",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^7.6.0",
+    "@sendgrid/mail": "^8.1.0",
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.23.0",
     "colors": "^1.4.0",
@@ -25,7 +25,7 @@
     "express-async-handler": "^1.1.4",
     "express-router": "0.0.1",
     "express-validator": "^6.7.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.2",
     "mongoose": "^5.10.16",
     "multer": "^1.4.2",
     "multer-storage-cloudinary": "^4.0.0",
